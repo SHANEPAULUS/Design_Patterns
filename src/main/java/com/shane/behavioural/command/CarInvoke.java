@@ -3,10 +3,10 @@ package com.shane.behavioural.command;
 /**
  * Created by SHANE on 2015/03/13.
  */
-public class DriveInvoke {
+public class CarInvoke {
     Command command;
 
-    public DriveInvoke(Command command) {
+    public CarInvoke(Command command) {
         this.command = command;
     }
 

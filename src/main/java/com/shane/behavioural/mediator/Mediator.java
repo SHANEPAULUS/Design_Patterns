@@ -1,39 +1,29 @@
 package com.shane.behavioural.mediator;
 
 /**
- * Created by SHANE on 2015/03/13.
+ * Created by SHANE on 2015/09/13.
  */
 public class Mediator {
 
-    Student freshman;
-    Student graduate;
+    Buyer zaBuyer;
+    Buyer usBuyer;
+    AmericanSeller americanSeller;
+    DollarConverter converter;
 
-    Lecturer professor;
-    Lesson classLesson;
-
-    public void registerfreshmanStudent(FreshmanStudent freshmanStudent)
-    {
-        this.freshman=freshmanStudent;
+    public Mediator() {
     }
 
-    public void registerGraduateStudent(GraduateStudent graduatestudent)
+    public void registerZaBuyer(SouthAfricanBuyer southAfricanBuyer){this.zaBuyer=southAfricanBuyer;}
+    //public void registerUsBuyer(){}
+
+    public void registerAmericanSeller(AmericanSeller usSeller){this.americanSeller=usSeller;}
+
+    public void registerDollarConverter(DollarConverter dollarConverter){this.converter=dollarConverter;}
+
+    public boolean placeBid(double bid,String unitOfCurrency)
     {
-        this.graduate=graduatestudent;
+        double dollars=converter.convertCurrencyToDollars(bid,unitOfCurrency);
+        return americanSeller.isBidAccepted(dollars);
     }
 
-    public void registerClassLesson(Lesson classLesson)
-    {
-        this.classLesson=classLesson;
-    }
-
-    public void registerLecturerProfessor(Lecturer professor)
-    {
-        this.professor=professor;
-    }
-
-    public boolean teach(Student stud)
-    {
-        classLesson.teach(stud);
-        return classLesson.lesson();
-    }
 }

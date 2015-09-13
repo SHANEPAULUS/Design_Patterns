@@ -3,7 +3,7 @@ package com.shane.behavioural.observer;
 /**
  * Created by SHANE on 2015/03/13.
  */
-public class MovieCustomer1 implements MovieObserver {
+public class MovieCustomer1 extends MovieCustomer implements MovieObserver {
 
     @Override
     public void doUpdate(String title) {

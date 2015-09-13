@@ -11,16 +11,16 @@ public class Braai extends Meal {
 
     @Override
     public void cook() {
-        System.out.println("Turn the chops and sausages every 2minutes");
+        System.out.println("Turning the chops and sausages every 2minutes");
     }
 
     @Override
     public void eat()
     {
-        System.out.println("This braai is delicious");
+        System.out.println("This Braai is delicious");
     }
     @Override
     public void cleanUp() {
-        System.out.println("Clean the plates, dishes");
+        System.out.println("Cleaning the plates");
     }
 }

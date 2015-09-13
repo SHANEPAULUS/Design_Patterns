@@ -9,18 +9,18 @@ public class CompareVisitor implements CarVistor {
     CarVistor carVistor;
 
     @Override
-    public void visitBim(BMW bmw) {
+    public void visit(BMW bmw) {
         bmw.accept(carVistor);
     }
 
     @Override
-    public void visitToy(Toyota toy) {
+    public void visit(Toyota toy) {
         toy.accept(carVistor);
     }
 
     @Override
-    public void visit(List<BMW> bmwList) {
-        for(CarElement ca: bmwList)
+    public void visit(List<CarElement> list) {
+        for(CarElement ca: list)
         {
             ca.accept(this);
         }
